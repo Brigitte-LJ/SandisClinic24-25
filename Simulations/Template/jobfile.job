@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -p RM-shared
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=12
+#SBATCH -t 12:00:00
+
+#load the modules
+module load intel/20.4
+module load intelmpi/20.4-intel20.4
+module load mkl/2020.4.304
+module load allocations/1.0
+
+cd /ocean/projects/che240054p/lynchjoh/Simulations/SiO_Molecule_1
+mpirun /ocean/projects/che240054p/lynchjoh/SeqQuest/Rbuild/allintel/dynamic_link/quest_268e.x
